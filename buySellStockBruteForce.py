@@ -8,7 +8,7 @@ def calculate(prices, s):
     for start in range(s, len(prices)):
         maxProfit = 0
         #print 'maxProfit', maxProfit
-        for i in range(s+1, len(prices)):
+        for i in range(start+1, len(prices)):
             if prices[start] < prices[i]:
                 profit = calculate(prices, i+1) + prices[i] - prices[start]
                 if profit > maxProfit:
