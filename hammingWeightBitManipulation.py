@@ -12,7 +12,7 @@ class Solution(object):
             n &=(n-1)
         return sum
         
-   #Following is pythonic solution
-   def hammigWeightPythonic(self, n):
-       return bin(n).count('1')
+    #Following is pythonic solution
+    def hammigWeightPythonic(self, n):
+        return bin(n).count('1')
        
