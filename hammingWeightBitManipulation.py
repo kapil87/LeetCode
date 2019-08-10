@@ -4,7 +4,6 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        """
         sum = 0
         while n:
             sum+=1
