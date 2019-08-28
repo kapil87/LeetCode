@@ -19,7 +19,9 @@ class Solution(object):
                     
         return -1*heapq.heappop(heap)
         '''
-                s = set()
+        if not matrix or k < 1: return
+        
+        s = set()
         s.add((0,0))
         heap = [(matrix[0][0], 0, 0)]
         
