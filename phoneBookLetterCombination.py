@@ -26,7 +26,6 @@ class Solution(object):
                     # append the current letter to the combination
                     # and proceed to the next digits
                     backtrack(combination + letter, next_digits[1:])
-        
         output = []
         if digits:
             backtrack("", digits)
