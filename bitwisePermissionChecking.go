@@ -23,4 +23,7 @@ func main() {
 	fmt.Printf("%b\n", moderator)
 	fmt.Printf("%b\n", writer)
 	fmt.Printf("%b\n", guest)
+	
+	fmt.Printf("is guest has write permission? %v\n", guest & writePost == writePost)
+	fmt.Printf("is guest has read permission? %v", guest & readPost == readPost)
 }
