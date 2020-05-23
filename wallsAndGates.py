@@ -39,3 +39,36 @@ class Solution:
                 queue.append((r,c))
         return min_distance
     
+    
+# Optimized solution for the same problem  
+class Solution:
+    
+    def __init__(self):
+        self.EMPTY = 2147483647
+        self.GATE = 0
+        self.DIRECTIONS = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+        
+    def wallsAndGates(self, rooms: List[List[int]]) -> None:
+        """
+        Do not return anything, modify rooms in-place instead.
+        """
+        if len(rooms) == 0: return 
+        m = len(rooms)
+        n = len(rooms[0])
+        queue = deque()
+        for r in range(m):
+            for c in range(n):
+                if rooms[r][c] == self.GATE:
+                    queue.append((r,c))
+
+        while queue:
+            row, col = queue.popleft()
+            for dirRow, dirCol in self.DIRECTIONS:
+                r = row + dirRow
+                c = col + dirCol
+                if (r < 0 or  c < 0 or r >= m or c >= n or rooms[r][c] != self.EMPTY):
+                    continue
+                rooms[r][c] = rooms[row][col] + 1
+                queue.append((r,c))
+        #print(rooms)
+    
